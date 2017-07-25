@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour, Magnet {
     public MagnetType type;
-	
+
     public void Create(MagnetType type, float force)
     {
         this.type = type;

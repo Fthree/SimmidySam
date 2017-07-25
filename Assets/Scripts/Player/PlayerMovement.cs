@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMovement  {
+public class PlayerMovement {
 
     // Use this for initialization
     public void Start () {

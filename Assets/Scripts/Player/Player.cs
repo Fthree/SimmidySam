@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     public float jumpForce = 200;
     public float jumpMovementSpeedDamper = 2;
     PlayerMovement playerMovement;
+    public Vector3 speed;
 
     // Use this for initialization
     void Start()
@@ -58,6 +59,14 @@ public class Player : MonoBehaviour {
         {
             PlayerStates.isJumping = false;
             currentMovementSpeed = movementSpeed;
+        }
+    }
+
+    public void clearCollisionObject()
+    {
+        foreach(var guns in GetComponentsInChildren<PlayerMagnetGun>())
+        {
+            guns.clearMagnet();
         }
     }
 }

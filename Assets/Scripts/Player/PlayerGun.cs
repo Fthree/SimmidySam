@@ -10,6 +10,7 @@ public class PlayerGun : MonoBehaviour {
     public GameObject bulletReleasePoint;
 
     public float force = 1000f;
+    public int maxMagnets = 5;
 
 	// Use this for initialization
 	void Start () {
@@ -18,15 +19,15 @@ public class PlayerGun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if(Input.GetMouseButtonDown(0) )
-        {
-            //if (blueMagnetInstance != null)
-            //{
-            //    blueMagnetInstance.Destroy();
-            //}
-            blueMagnetInstance = Instantiate(blueMagnetBall, bulletReleasePoint.transform.position, bulletReleasePoint.transform.rotation) as Bullet;
-            blueMagnetInstance.Create(MagnetType.BLUE, force);
-        }
+	    //if(Input.GetMouseButtonDown(0) )
+     //   {
+     //       if (blueMagnetInstance != null)
+     //       {
+     //           blueMagnetInstance.Destroy();
+     //       }
+     //       blueMagnetInstance = Instantiate(blueMagnetBall, bulletReleasePoint.transform.position, bulletReleasePoint.transform.rotation) as Bullet;
+     //       blueMagnetInstance.Create(MagnetType.BLUE, force);
+     //   }
         if (Input.GetMouseButtonDown(1))
         {
             //if (orangeMagnetInstance != null)
@@ -37,4 +38,6 @@ public class PlayerGun : MonoBehaviour {
             orangeMagnetInstance.Create(MagnetType.ORANGE, force);
         }
     }
+
+
 }

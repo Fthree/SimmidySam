@@ -7,7 +7,7 @@ public class PuzzleLight : MonoBehaviour {
     public Material off;
 
     public bool status;
-    public bool wasOn;
+    bool wasOn;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +15,10 @@ public class PuzzleLight : MonoBehaviour {
         GetComponentInChildren<Light>().intensity = 0f;
         wasOn = false;
         status = false;
-	}
+
+        Triggerable triggerEvent = GetComponent<Triggerable>();
+        triggerEvent.OnTrigger += trigger;
+    }
 	
 	// Update is called once per frame
 	void Update () {

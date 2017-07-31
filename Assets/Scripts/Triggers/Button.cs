@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class Button : MonoBehaviour {
 
-    public PuzzleLight puzzleLight;
-    public PuzzleDoor puzzleDoor;
+    public List<Triggerable> triggerables;
     public bool bounceBack;
     public bool isPressed;
     public float height;
@@ -43,10 +42,9 @@ public class Button : MonoBehaviour {
         {
             isPressed = true;
             GetComponent<Animator>().SetBool("IsPressed", isPressed);
-            
+
             collider.GetComponent<Rigidbody>().AddForce(transform.up * (bounceBack ? bounceBackForce : 0));
-            puzzleLight.trigger();
-            puzzleDoor.trigger();
+            triggerables.ForEach((triggerable) => triggerable.trigger());
             lastTouchingCube = collider.GetComponent<GravityCube>();
         }
     }

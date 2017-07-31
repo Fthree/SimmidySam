@@ -23,7 +23,8 @@ public class PlayerForceFieldGun : MonoBehaviour {
         {
             Vector3 forwardPlus = transform.position + transform.forward;
             currentlyHeldCube.transform.position = forwardPlus;
-            currentlyHeldCube.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(5f, 7f), Random.Range(5f, 7f), Random.Range(5f, 7f)), ForceMode.Impulse);
+            currentlyHeldCube.transform.rotation = new Quaternion();
+            //currentlyHeldCube.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(5f, 7f), Random.Range(5f, 7f), Random.Range(5f, 7f)), ForceMode.Impulse);
         }
 
         //Pickup object
@@ -52,7 +53,7 @@ public class PlayerForceFieldGun : MonoBehaviour {
             Vector3 forwardForce = transform.forward;
             forwardForce.y += 0.35f;
             currentlyHeldCube.GetComponent<Rigidbody>().velocity = forwardForce  * 15;
-            currentlyHeldCube.GetComponent<Rigidbody>().AddTorque(new Vector3(10f, 0f, 0f));
+            //currentlyHeldCube.GetComponent<Rigidbody>().AddTorque(new Vector3(10f, 0f, 0f));
             currentlyHeldCube = null;
         }
         //drop

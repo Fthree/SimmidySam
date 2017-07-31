@@ -30,7 +30,7 @@ public class PlayerCamera : MonoBehaviour {
     {
         float angleX = 2.0f * Mathf.Rad2Deg * Mathf.Atan(q.x);
         angleX = Mathf.Clamp(angleX, minimumX, maximumY);
-        q.x = Mathf.Tan(0.6f * Mathf.Deg2Rad * angleX);
+        q.x = Mathf.Tan(0.5f * Mathf.Deg2Rad * angleX);
 
         return q;
     }

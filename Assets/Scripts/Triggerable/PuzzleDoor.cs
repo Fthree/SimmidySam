@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PuzzleDoor : MonoBehaviour {
 
-    bool status = false;
+    public bool status = false;
     bool wasOpen = false;
 
 	// Use this for initialization
 	void Start () {
-        GetComponentInChildren<Light>().intensity = 0f;
+        Triggerable triggerEvent = GetComponent<Triggerable>();
+        triggerEvent.OnTrigger += trigger;
     }
 	
 	// Update is called once per frame
